@@ -38,25 +38,17 @@ function playerSelection() {
 function playRound() {
        
 
-    let roundTie;
-   if (choice === "rock" && cpuMove === "rock")console.log("draw", playerScore +=1, cpuScore +=1);
-   if (choice === "paper" && cpuMove === "paper")console.log("draw", playerScore +=1, cpuScore +=1);
-   if (choice === "scissors" && cpuMove === "scissors")console.log("draw", playerScore +=1, cpuScore +=1);
-
- 
-
-   
+    
+   if (choice === cpuMove)console.log("draw", playerScore +=1, cpuScore +=1);
+    
    if (choice === "rock" && cpuMove === "scissors")console.log("player win", playerScore +=1) ;
    if (choice === "paper" && cpuMove === "rock")console.log("player win", playerScore +=1) ;
    if (choice === "scissors" && cpuMove === "paper")console.log("player win", playerScore +=1) ;
-  
-
-    
+      
    if (choice === "rock" && cpuMove === "paper")console.log("cpu win", cpuScore +=1); 
    if (choice === "paper" && cpuMove === "scissors")console.log("cpu win", cpuScore +=1); 
    if (choice === "scissors" && cpuMove === "rock")console.log("cpu win", cpuScore +=1); 
 
-     
    
   
     console.log("Player score: " +playerScore)
@@ -90,9 +82,11 @@ computerPlay();
 playRound();
 
 
-if (playerScore >=3) console.log("PLAYER WINS - owned that cpu");
-if (cpuScore >=3) console.log("CPU WINS - you lose....");
 
+    if (playerScore > cpuScore) { console.log("PLAYER WINS - owned that cpu");
+}   else if (cpuScore > playerScore){ console.log("CPU WINS - you lose....");
+}   else if (playerScore === cpuScore) { console.log("draw everyone wins yay");
+}
 
 
 
