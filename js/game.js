@@ -6,7 +6,7 @@ let randomNumber = Math.floor(Math.random()*100-1);
     }   if (randomNumber >=34 && randomNumber <=66) { cpuMove=("paper"); 
     }   if (randomNumber >=67 && randomNumber <=99){ cpuMove=("scissors");
     }
-    console.log("Super Computer choses: " +cpuMove) 
+    //console.log("Super Computer choses: " +cpuMove) 
     
  }
 
@@ -29,10 +29,26 @@ function playerSelection() {
 }
 
 
+function playRound() {
 
+    if (choice === "rock" && cpuMove === "rock") { console.log("DRAW!")
+}    if (choice === "paper" && cpuMove === "paper") { console.log("DRAW!")
+}    if (choice === "scissors" && cpuMove === "scissors") { console.log("DRAW!")
+}
 
-playerSelection();
+    
+}
+
 computerPlay();
+playerSelection();
+playRound();
+
+
+
+
+
+
+
 
 
 
