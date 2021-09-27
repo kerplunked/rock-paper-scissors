@@ -6,7 +6,7 @@ let randomNumber = Math.floor(Math.random()*100-1);
     }   if (randomNumber >=34 && randomNumber <=66) { cpuMove=("paper"); 
     }   if (randomNumber >=67 && randomNumber <=99){ cpuMove=("scissors");
     }
-    //console.log("Super Computer choses: " +cpuMove) 
+    console.log("Super Computer choses: " +cpuMove) 
     
  }
 
@@ -29,15 +29,35 @@ function playerSelection() {
 }
 
 
+//declare winner after turn 
+//scores if player wins add 1 to current score both srtart at 0
 function playRound() {
 
-    if (choice === "rock" && cpuMove === "rock") { console.log("DRAW!")
-}    if (choice === "paper" && cpuMove === "paper") { console.log("DRAW!")
-}    if (choice === "scissors" && cpuMove === "scissors") { console.log("DRAW!")
+     let draw, playerWin, cpuWin;
+    
+
+   if (choice === "rock" && cpuMove === "rock") draw ;
+   if (choice === "paper" && cpuMove === "paper") draw;
+   if (choice === "scissors" && cpuMove === "scissors") draw; 
+   if (draw) console.log("draw");
+
+   if (choice === "rock" && cpuMove === "scissors")  playerWin;
+   if (choice === "paper" && cpuMove === "rock")   playerWin;
+   if (choice === "scissors" && cpuMove === "paper")  playerWin;
+   if (playerWin) console.log("player win");
+
+   if (choice === "rock" && cpuMove === "paper")  cpuWin;
+   if (choice === "paper" && cpuMove === "scissors")  cpuWin;
+   if (choice === "scissors" && cpuMove === "rock")  cpuWin; 
+   if (cpuWin) console.log("cpu win");
+  
+  
+  
+
 }
 
-    
-}
+
+
 
 computerPlay();
 playerSelection();
