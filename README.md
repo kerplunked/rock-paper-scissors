@@ -1,1 +1,5 @@
-# rock-paper-scissors
+# rps-game
+rock paper scisors odin
+
+
+james
