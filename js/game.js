@@ -1,4 +1,8 @@
-//func computerPlay pick rock paper scissors at random - random number between  <=33 <=66 <=100
+
+let playerScore = 0;
+let cpuScore = 0;
+
+
 
 function computerPlay(){
 let randomNumber = Math.floor(Math.random()*100-1);
@@ -6,7 +10,7 @@ let randomNumber = Math.floor(Math.random()*100-1);
     }   if (randomNumber >=34 && randomNumber <=66) { cpuMove=("paper"); 
     }   if (randomNumber >=67 && randomNumber <=99){ cpuMove=("scissors");
     }
-    console.log("Super Computer choses: " +cpuMove) 
+    console.log("CPU: " +cpuMove) 
     
  }
 
@@ -24,33 +28,55 @@ function playerSelection() {
     
   }
 
-    console.log("you picked: "+choice)
+    console.log("you: "+choice)
  
 }
 
 
-//declare winner after turn 
-//scores if player wins add 1 to current score both srtart at 0
-function playRound(playerSelection, computerPlay) {
+//if outcome happens add to score 0 or 1
+
+function playRound() {
        
 
-  if (choice === "rock" && cpuMove === "rock")console.log("draw");
-   if (choice === "paper" && cpuMove === "paper")console.log("draw");
-   if (choice === "scissors" && cpuMove === "scissors")console.log("draw");
-    
+    let roundTie;
+   if (choice === "rock" && cpuMove === "rock")console.log("draw", playerScore +=1, cpuScore +=1);
+   if (choice === "paper" && cpuMove === "paper")console.log("draw", playerScore +=1, cpuScore +=1);
+   if (choice === "scissors" && cpuMove === "scissors")console.log("draw", playerScore +=1, cpuScore +=1);
 
-   if (choice === "rock" && cpuMove === "scissors")console.log("player win");
-   if (choice === "paper" && cpuMove === "rock")console.log("player win");
-   if (choice === "scissors" && cpuMove === "paper")console.log("player win");
+ 
+
    
+   if (choice === "rock" && cpuMove === "scissors")console.log("player win", playerScore +=1) ;
+   if (choice === "paper" && cpuMove === "rock")console.log("player win", playerScore +=1) ;
+   if (choice === "scissors" && cpuMove === "paper")console.log("player win", playerScore +=1) ;
+  
 
-   if (choice === "rock" && cpuMove === "paper")console.log("cpu win");
-   if (choice === "paper" && cpuMove === "scissors")console.log("cpu win");
-   if (choice === "scissors" && cpuMove === "rock")console.log("cpu win");
-      
+    
+   if (choice === "rock" && cpuMove === "paper")console.log("cpu win", cpuScore +=1); 
+   if (choice === "paper" && cpuMove === "scissors")console.log("cpu win", cpuScore +=1); 
+   if (choice === "scissors" && cpuMove === "rock")console.log("cpu win", cpuScore +=1); 
+
+     
+   
+  
+    console.log("Player score: " +playerScore)
+    console.log("CPU score: "+cpuScore)
 
 }
 
+playerSelection();
+computerPlay();
+playRound();
+
+
+playerSelection();
+computerPlay();
+playRound();
+
+
+playerSelection();
+computerPlay();
+playRound();
 
 
 playerSelection();
@@ -59,10 +85,13 @@ playRound();
 
 
 
+playerSelection();
+computerPlay();
+playRound();
 
 
-
-
+if (playerScore >=3) console.log("PLAYER WINS - owned that cpu");
+if (cpuScore >=3) console.log("CPU WINS - you lose....");
 
 
 
