@@ -7,29 +7,32 @@ let randomNumber = Math.floor(Math.random()*100-1);
     }   if (randomNumber >=67 && randomNumber <=99){ cpuMove=("scissors");
     }
     console.log("Super Computer choses: " +cpuMove) 
+    
  }
 
 
-//function gameRound - starts game asks for user input
+
+
 //playerSelection ask for input rps into console then accept input of rps
-//computerSelection output random computerPlay after 
 
-function gameRound() {
+
+function playerSelection() {
+    const playerMove = prompt("rock paper scissors").toLowerCase();
+    if (playerMove === "rock") { choice=("rock");
+    }if (playerMove === "paper") { choice=("paper");
+    }if (playerMove === "scissors") { choice=("scissors");
     
+  }
 
-    let playerSelection = prompt("Type rock, paper or scissors.");
-    if (playerSelection  === "rock", "paper", "scissors")  ;
-    console.log("You chose: " +playerSelection) ;
-
+    console.log("you picked: "+choice)
+ 
 }
 
-    
 
-//log cpumove
-//if you picked rock and cpu picked paper - you lose! - 
-gameRound();
+
+
+playerSelection();
 computerPlay();
-
 
 
 
