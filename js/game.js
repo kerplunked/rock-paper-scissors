@@ -23,7 +23,7 @@ function computerPlay() {
    
  
 
- function playRound(computerMove, playerMove) {   
+ function playRound() {   
 
     computerMove = computerPlay();
     
@@ -32,25 +32,22 @@ function computerPlay() {
     console.log("cpu move: "+computerMove)
     
 
-    if (playerMove === computerMove) {
-        return "draw";
+    if (playerMove === computerMove) { 
+        console.log(`Draw! Both selected - ${playerMove}`);
+        return "draw"; 
     }
-    else if (playerMove === "rock" && computerMove === "scissors") {
+    else if ((playerMove === "rock" && computerMove === "scissors") 
+      ||    (playerMove === "paper" && computerMove === "rock") 
+      ||    (playerMove === "scissors" && computerMove === "paper")) { 
+          playerScore +=1; 
+          console.log(`Player wins round - ${playerMove} beats ${computerMove}`);
         return "player win";
     }
-    else if (playerMove === "paper" && computerMove === "rock") {
-        return "player win";
-    }   
-    else if (playerMove === "scissors" && computerMove === "paper") { 
-        return "player win";
-    }
-    else if (playerMove === "rock" && computerMove === "paper") {
-        return "cpu win";
-    }    
-    else if (playerMove === "paper" && computerMove === "scissors") {
-        return "cpu win";
-    }  
-    else if (playerMove === "scissors" && computerMove === "rock") {
+    else if ((playerMove === "rock" && computerMove === "paper")
+      ||     (playerMove === "paper" && computerMove === "scissors") 
+      ||      (playerMove === "scissors" && computerMove === "rock")) {
+            cpuScore +=1; 
+            console.log(`CPU wins round - ${computerMove} beats ${playerMove}`);
         return "cpu win";
     }   
     else { alert ("OH NO!")
@@ -59,43 +56,28 @@ function computerPlay() {
 }
 
 
-function winner(outcome) {
-
-    outcome = playRound();
-    console.log("round outcome: "+outcome);
-
-    if (outcome === "player win") {
-        playerScore +=1
-    }
-    if (outcome === "cpu win") {
-        cpuScore +=1
-    }
-   
-      
-}
 
 
 
 
-
-winner();
-winner();
-winner();
-winner();
-winner();
-
+playRound();
+playRound();
+playRound();
+playRound();
+playRound();
 
 
 
-console.log("player score: "+playerScore, "cpu score: "+cpuScore);
+
+console.log("FINAL SCORES Player Score "+playerScore,"vs",+cpuScore, "CPU Score" );
 
 if (cpuScore > playerScore) {
-    console.log("cpu wins game");
+    console.log("The Computer has won the game, bad luck.");
 }
 else if (playerScore > cpuScore) {
-    console.log("player wins game");
+    console.log("Player Victory! ");
 }
-else { console.log("its a draw");
+else { console.log("It's a Draw...");
 }
 
 
