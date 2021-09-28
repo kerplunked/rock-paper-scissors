@@ -51,29 +51,35 @@ function playerSelection() {
 
 function playRound(playerSelection, computerPlay) {
            
-   if (playerSelection === computerPlay) {
-   return "draw" }
-    
-        if (playerSelection === "rock" && computerPlay === "scissors") {
-    return "player win";
+      if (playerSelection === "rock" && computerPlay === "scissors") {
+    return "player win"
     }   else if (playerSelection === "paper" && computerPlay === "rock") {
-    return "player win";
+    return "player win"
    }    else if (playerSelection === "scissors" && computerPlay === "paper") {
-       return "player win";
-   }
-
-        if (playerSelection === "rock" && computerPlay === "paper") {
-   return "cpu win" 
+       return "player win"
+   }    else if (playerSelection === "rock" && computerPlay === "paper") {
+   return "cpu win"
    }    else if (playerSelection === "paper" && computerPlay === "scissors") {
    return "cpu win"
    }    else if (playerSelection === "scissors" && computerPlay === "rock") {
    return "cpu win"
-    }
-
+   }   
    
-  
+   
 }
 
+
+
+function score(playRound) {
+
+    if (playRound === "player win") { 
+        playerScore =+1
+}   else if  (playRound === "cpu win") {
+        cpuScore +=1
+}
+
+
+}
 
 
 playRound;
@@ -81,6 +87,9 @@ playRound;
 console.log("cpu move: "+computerPlay())
 console.log("player move: "+playerSelection())
 console.log("round outcome: "+playRound())
+
+
+console.log(playerScore,cpuScore)
 
 
 
