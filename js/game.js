@@ -59,13 +59,33 @@ function computerPlay() {
 }
 
 
+function winner(outcome) {
+
+    outcome = playRound();
+    console.log("round outcome: "+outcome);
+
+    if (outcome === "player win") {
+        playerScore +=1
+    }
+    if (outcome === "cpu win") {
+        cpuScore +=1
+    }
+   
+    if (cpuScore || playerScore === 1) {
+        return `GAME`
+    }
+
+}
 
 
 
 
 
+winner();
 
-console.log("round outcome: "+playRound())
+
+
+console.log("player score: "+playerScore, "cpu score: "+cpuScore);
 
 
 
