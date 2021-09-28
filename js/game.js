@@ -3,19 +3,32 @@ let playerScore = 0;
 let cpuScore = 0;
 
 
+function computerNumber() {
 
-function computerPlay(){
-let randomNumber = Math.floor(Math.random()*100-1);
-        if (randomNumber >=0 && randomNumber <=33) { cpuMove=("rock");
-    }   if (randomNumber >=34 && randomNumber <=66) { cpuMove=("paper"); 
-    }   if (randomNumber >=67 && randomNumber <=99){ cpuMove=("scissors");
-    }
-    console.log("CPU: " +cpuMove) 
+    const computerRandom = Math.floor(Math.random()*3);
+
+    return computerRandom;
+
+}
+
+
+
+function computerPlay()
+{
+
+      const computerChoice = computerNumber();
+     
+    if (computerChoice === 0) { 
+        return "rock";
+    }else if (computerChoice === 1) {
+        return "paper";
+    }else { 
+        return "scissors";
+}
+  
+}
+//console.log(computerPlay())
     
- }
-
-
-
 
 //playerSelection ask for input rps into console then accept input of rps
 
@@ -91,3 +104,14 @@ playRound();
 
 
 
+
+
+
+
+//let randomNumber = Math.floor(Math.random()*100-1);
+ //       if (randomNumber >=0 && randomNumber <=33) { cpuMove=("rock");
+ //   }   if (randomNumber >=34 && randomNumber <=66) { cpuMove=("paper"); 
+  //  }   if (randomNumber >=67 && randomNumber <=99){ cpuMove=("scissors");
+//}
+  //  console.log("CPU: " +cpuMove) 
+    
