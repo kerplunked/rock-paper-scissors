@@ -55,21 +55,10 @@ function computerPlay() {
    
 }
 
+function gameWinner(){
 
 
-
-
-
-playRound();
-playRound();
-playRound();
-playRound();
-playRound();
-
-
-
-
-console.log("FINAL SCORES Player Score "+playerScore,"vs",+cpuScore, "CPU Score" );
+    console.log("FINAL SCORES Player Score "+playerScore,"vs",+cpuScore, "CPU Score" );
 
 if (cpuScore > playerScore) {
     console.log("The Computer has won the game, bad luck.");
@@ -80,5 +69,17 @@ else if (playerScore > cpuScore) {
 else { console.log("It's a Draw...");
 }
 
+}
+
+
+
+
+
+playRound();
+playRound();
+playRound();
+playRound();
+playRound();
+gameWinner()
 
 
