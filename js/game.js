@@ -71,10 +71,7 @@ function winner(outcome) {
         cpuScore +=1
     }
    
-    if (cpuScore || playerScore === 1) {
-        return `GAME`
-    }
-
+      
 }
 
 
@@ -82,13 +79,24 @@ function winner(outcome) {
 
 
 winner();
+winner();
+winner();
+winner();
+winner();
+
 
 
 
 console.log("player score: "+playerScore, "cpu score: "+cpuScore);
 
-
-
+if (cpuScore > playerScore) {
+    console.log("cpu wins game");
+}
+else if (playerScore > cpuScore) {
+    console.log("player wins game");
+}
+else { console.log("its a draw");
+}
 
 
 
