@@ -1,6 +1,34 @@
 
 let playerScore = 0;
 let cpuScore = 0;
+let playerBtn = ""
+
+
+
+
+ document.getElementById("btnr").onclick = function() {
+    playerBtn = "rock";
+    playRound();
+ };
+
+
+ document.getElementById("btnp").onclick = function() {
+    playerBtn = "paper";
+    playRound();
+ }; 
+ 
+ 
+ 
+ document.getElementById("btns").onclick = function() {
+    playerBtn = "scissors";
+    playRound();
+ };
+
+
+
+
+
+
 
 
 function computerPlay() {
@@ -26,8 +54,10 @@ function computerPlay() {
  function playRound() {   
 
     computerMove = computerPlay();
+
+    playerMove = playerBtn;
     
-    playerMove = prompt("rock paper scissors").toLowerCase();
+    
     console.log("player move: "+playerMove);
     console.log("cpu move: "+computerMove)
     
@@ -49,8 +79,8 @@ function computerPlay() {
             cpuScore +=1; 
             console.log(`CPU wins round - ${computerMove} beats ${playerMove}`);
         return "cpu win";
-    }   
-    else { alert ("OH NO!")
+      
+    
 }
    
 }
@@ -70,16 +100,5 @@ else { console.log("It's a Draw...");
 }
 
 }
-
-
-
-
-
-playRound();
-playRound();
-playRound();
-playRound();
-playRound();
-gameWinner()
 
 
