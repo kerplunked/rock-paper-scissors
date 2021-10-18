@@ -6,23 +6,26 @@ let playerBtn = ""
 
 
 
- document.getElementById("btnr").onclick = function() {
+ document.querySelector("#btnr");
+    btnr.addEventListener("click", () => {
     playerBtn = "rock";
     playRound();
- };
+    
+});
 
-
- document.getElementById("btnp").onclick = function() {
+const btnp = document.querySelector("#btnp");
+    btnp.addEventListener("click", () => {
     playerBtn = "paper";
-    playRound();
- }; 
- 
- 
- 
- document.getElementById("btns").onclick = function() {
+    
+});
+
+
+const btns = document.querySelector("#btns");
+    btns.addEventListener("click", () => {
     playerBtn = "scissors";
-    playRound();
- };
+    
+});
+
 
 
 
