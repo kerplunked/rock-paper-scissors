@@ -6,6 +6,9 @@ let playerBtn = ""
 
 
 
+
+
+
  document.querySelector("#btnr");
     btnr.addEventListener("click", () => {
     playerBtn = "rock";
@@ -16,6 +19,7 @@ let playerBtn = ""
 const btnp = document.querySelector("#btnp");
     btnp.addEventListener("click", () => {
     playerBtn = "paper";
+    playRound();
     
 });
 
@@ -23,6 +27,7 @@ const btnp = document.querySelector("#btnp");
 const btns = document.querySelector("#btns");
     btns.addEventListener("click", () => {
     playerBtn = "scissors";
+    playRound();
     
 });
 
@@ -60,48 +65,55 @@ function computerPlay() {
 
     playerMove = playerBtn;
     
+    const moves = document.querySelector(".moves");
+    moves.textContent = `You picked: ${playerMove} and The CPU picked: ${computerMove}`;
     
-    console.log("player move: "+playerMove);
-    console.log("cpu move: "+computerMove)
+    const score = document.querySelector(".score");
+
+    const total = document.querySelector(".total");
+    total.textContent = `Your score = ${playerScore}  CPU score = ${cpuScore}`;
+
+
+
+
+    const gameOver = document.createElement("div")
+    container.appendChild(gameOver)
+    
+
+    if (cpuScore === 5) {
+    gameOver.textContent = "CPU WINS! you lose"
+    }
+    else if (playerScore === 5) {
+    gameOver.textContent = "YOU WIN! good job"
+    }
+
+
     
 
     if (playerMove === computerMove) { 
-        console.log(`Draw! Both selected - ${playerMove}`);
+        score.textContent = `Draw! Both selected - ${playerMove}`;
         return "draw"; 
     }
     else if ((playerMove === "rock" && computerMove === "scissors") 
       ||    (playerMove === "paper" && computerMove === "rock") 
       ||    (playerMove === "scissors" && computerMove === "paper")) { 
           playerScore +=1; 
-          console.log(`Player wins round - ${playerMove} beats ${computerMove}`);
+          score.textContent = `Player wins round - ${playerMove} beats ${computerMove}`;
         return "player win";
     }
     else if ((playerMove === "rock" && computerMove === "paper")
       ||     (playerMove === "paper" && computerMove === "scissors") 
       ||      (playerMove === "scissors" && computerMove === "rock")) {
             cpuScore +=1; 
-            console.log(`CPU wins round - ${computerMove} beats ${playerMove}`);
+            score.textContent = `CPU wins round - ${computerMove} beats ${playerMove}`;
         return "cpu win";
+
+
+
+        
       
     
 }
    
 }
-
-function gameWinner(){
-
-
-    console.log("FINAL SCORES Player Score "+playerScore,"vs",+cpuScore, "CPU Score" );
-
-if (cpuScore > playerScore) {
-    console.log("The Computer has won the game, bad luck.");
-}
-else if (playerScore > cpuScore) {
-    console.log("Player Victory! ");
-}
-else { console.log("It's a Draw...");
-}
-
-}
-
 
