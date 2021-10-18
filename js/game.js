@@ -4,38 +4,26 @@ let cpuScore = 0;
 let playerBtn = ""
 
 
-
-
-
-
-
- document.querySelector("#btnr");
+document.querySelector("#btnr");
     btnr.addEventListener("click", () => {
     playerBtn = "rock";
     playRound();
     
 });
 
-const btnp = document.querySelector("#btnp");
+document.querySelector("#btnp");
     btnp.addEventListener("click", () => {
     playerBtn = "paper";
     playRound();
     
 });
 
-
-const btns = document.querySelector("#btns");
+document.querySelector("#btns");
     btns.addEventListener("click", () => {
     playerBtn = "scissors";
     playRound();
     
 });
-
-
-
-
-
-
 
 
 
@@ -73,9 +61,6 @@ function computerPlay() {
     const total = document.querySelector(".total");
     total.textContent = `Your score = ${playerScore}  CPU score = ${cpuScore}`;
 
-
-
-
     const gameOver = document.createElement("div")
     container.appendChild(gameOver)
     
@@ -92,24 +77,24 @@ function computerPlay() {
 
     if (playerMove === computerMove) { 
         score.textContent = `Draw! Both selected - ${playerMove}`;
-        return "draw"; 
+         
     }
-    else if ((playerMove === "rock" && computerMove === "scissors") 
+     if ((playerMove === "rock" && computerMove === "scissors") 
       ||    (playerMove === "paper" && computerMove === "rock") 
       ||    (playerMove === "scissors" && computerMove === "paper")) { 
           playerScore +=1; 
           score.textContent = `Player wins round - ${playerMove} beats ${computerMove}`;
-        return "player win";
+        
     }
-    else if ((playerMove === "rock" && computerMove === "paper")
+     if ((playerMove === "rock" && computerMove === "paper")
       ||     (playerMove === "paper" && computerMove === "scissors") 
       ||      (playerMove === "scissors" && computerMove === "rock")) {
             cpuScore +=1; 
             score.textContent = `CPU wins round - ${computerMove} beats ${playerMove}`;
-        return "cpu win";
+        
 
-
-
+ 
+    
         
       
     
