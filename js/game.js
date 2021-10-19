@@ -2,6 +2,7 @@
 let playerScore = 0;
 let cpuScore = 0;
 let playerBtn = ""
+const rmvBtn = document.querySelector(".buttons")
 
 
 document.querySelector("#btnr");
@@ -101,13 +102,25 @@ function computerPlay() {
 
  }
 
-   function newRound() {
+ if (cpuScore === 5 || playerScore === 5) {
+    rmvBtn.remove();
 
-    if (cpuScore === 5 || playerScore === 5) {
-        console.log("RESTART")
+    const restart = document.createElement("button");
+    restart.innerHTML = "PLAY AGAIN?";
+    container.appendChild(restart);
 
-    }
- }
+    restart.addEventListener("click", () =>  {
+        window.location.reload()
+        
+
+    })
+    
+
    
+    
+     
+}
+
+ 
 }
 
