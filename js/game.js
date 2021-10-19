@@ -59,18 +59,13 @@ function computerPlay() {
     const score = document.querySelector(".score");
 
     const total = document.querySelector(".total");
-    total.textContent = `Your score = ${playerScore}  CPU score = ${cpuScore}`;
+   
 
     const gameOver = document.createElement("div")
     container.appendChild(gameOver)
     
 
-    if (cpuScore === 5) {
-    gameOver.textContent = "CPU WINS! you lose"
-    }
-    else if (playerScore === 5) {
-    gameOver.textContent = "YOU WIN! good job"
-    }
+  
 
 
     
@@ -82,23 +77,37 @@ function computerPlay() {
      if ((playerMove === "rock" && computerMove === "scissors") 
       ||    (playerMove === "paper" && computerMove === "rock") 
       ||    (playerMove === "scissors" && computerMove === "paper")) { 
-          playerScore +=1; 
-          score.textContent = `Player wins round - ${playerMove} beats ${computerMove}`;
+        playerScore +=1; 
+        score.textContent = `Player wins round - ${playerMove} beats ${computerMove}`;
+        total.textContent = `Your score = ${playerScore}  CPU score = ${cpuScore}`;
+    if (playerScore === 5) {
+        gameOver.textContent = "YOU WIN! good job"
+    } 
+        
         
     }
      if ((playerMove === "rock" && computerMove === "paper")
       ||     (playerMove === "paper" && computerMove === "scissors") 
-      ||      (playerMove === "scissors" && computerMove === "rock")) {
-            cpuScore +=1; 
-            score.textContent = `CPU wins round - ${computerMove} beats ${playerMove}`;
-        
+      ||     (playerMove === "scissors" && computerMove === "rock")) {
+        cpuScore +=1; 
+        score.textContent = `CPU wins round - ${computerMove} beats ${playerMove}`;
+        total.textContent = `Your score = ${playerScore}  CPU score = ${cpuScore}`;
+    if (cpuScore === 5) {
+    gameOver.textContent = "CPU WINS! you lose"
+    }   
 
- 
     
-        
-      
-    
-}
+   
+
+ }
+
+   function newRound() {
+
+    if (cpuScore === 5 || playerScore === 5) {
+        console.log("RESTART")
+
+    }
+ }
    
 }
 
