@@ -107,7 +107,8 @@ function computerPlay() {
     rmvBtn.remove();
 
     const restart = document.createElement("button");
-    restart.innerHTML = "PLAY AGAIN?";
+    restart.classList.add("rebtn")
+    restart.innerHTML = "Restart?";
     container.appendChild(restart);
 
     restart.addEventListener("click", () =>  {

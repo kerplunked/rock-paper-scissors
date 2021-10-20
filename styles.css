@@ -3,6 +3,8 @@ body {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    background-color:rgb(194, 219, 217);
+    
     
     
 }
@@ -24,13 +26,14 @@ body {
 
 }
 
-#btnr, #btnp, #btns {
+#btnr, #btnp, #btns, .rebtn {
     width:155px;
     height: 56px;
     background-color: #000000;
     color: #ffffff;
     font-size: 22px;
     border-radius: 13px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
    
 }
 
@@ -39,5 +42,12 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 25px;
+    font-size: 20px;
 
+}
+
+#btnr:hover, #btnp:hover,#btns:hover, .rebtn:hover {
+    font-size: 23px;
+    font-weight: bolder;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.582), 0 6px 20px 0 rgba(0, 0, 0, 0.432);
 }
