@@ -1,6 +1,6 @@
 # rps-game
-rock paper scisors odin
+rock paper scisors game
 
-new
+odin project
 
-james
+created by James
