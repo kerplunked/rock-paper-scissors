@@ -3,6 +3,9 @@ let playerScore = 0;
 let cpuScore = 0;
 let playerBtn = ""
 const rmvBtn = document.querySelector(".buttons")
+const gameOver = document.createElement("div")
+container.appendChild(gameOver)
+
 
 
 document.querySelector("#btnr");
@@ -62,9 +65,7 @@ function computerPlay() {
     const total = document.querySelector(".total");
    
 
-    const gameOver = document.createElement("div")
-    container.appendChild(gameOver)
-    
+   
 
   
 
